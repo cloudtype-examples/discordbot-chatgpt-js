@@ -53,11 +53,13 @@ client.on("messageCreate", async function (message) {
             ],
         });
 
+        console.log(response);
+
         const content = response.data.choices[0].message;
-        return message.reply(content);
+        return await message.reply(content);
 
     } catch (err) {
-        return message.reply(
+        return await message.reply(
             "Error"
         );
     }
